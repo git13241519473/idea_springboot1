@@ -14,4 +14,12 @@ public class UserController {
         return "hello! " + name;
     }
 
+    @RequestMapping("hello2")
+    public String sayHello2(String name) {
+        if(!(name != null && !"".equals(name))){
+            name = "";
+        }
+        return "hello2 ! " + name;
+    }
+
 }
