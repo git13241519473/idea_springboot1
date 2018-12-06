@@ -4,6 +4,9 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
+/**
+ * jdk 动态代理模式
+ */
 public class Meipo implements InvocationHandler {
 
     private Person person;
@@ -12,7 +15,7 @@ public class Meipo implements InvocationHandler {
     public Object invoke(Object proxy, Method method, Object[] args) throws Exception {
         System.out.println("来了一个媒婆，帮你找对象");
         System.out.println("看了你的条件要求是：");
-        this.person.findLove();
+        method.invoke(person, args);    //就是调用 findLove()
         System.out.println("哈，帮你找到了，玩去吧");
         return null;
     }
