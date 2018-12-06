@@ -1,9 +1,10 @@
 package com.qing.springboot1.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
+@Controller
 public class UserController {
 
     @RequestMapping("hello")
@@ -22,4 +23,11 @@ public class UserController {
         return "hello2 ! " + name;
     }
 
+    @RequestMapping("test")
+    public ModelAndView test(){
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("myTitle", "欢迎使用 thymeleaf");
+        mav.setViewName("test");
+        return mav;
+    }
 }
