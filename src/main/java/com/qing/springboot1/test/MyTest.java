@@ -30,7 +30,7 @@ public class MyTest {
         list.add(new User("xiaoliuzi", 24)); //报错
     }*/
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         ThreadTest threadTest = new ThreadTest();
         FutureTask<String> futureTask = new FutureTask<>(threadTest);
         Thread thread = new Thread(futureTask);
@@ -40,6 +40,13 @@ public class MyTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }*/
+
+    public static void main(String[] args) {
+        DemonTest demonTest = new DemonTest();
+        Thread thread = new Thread(demonTest);
+        thread.setDaemon(true); //设置为守护线程必须在线程启动之前，而且守护线程的执行代码不一定会执行 finally 块中的代码
+        thread.start();
     }
 
 }
