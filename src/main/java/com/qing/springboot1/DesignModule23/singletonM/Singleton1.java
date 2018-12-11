@@ -1,4 +1,4 @@
-package com.qing.springboot1.singletonTest;
+package com.qing.springboot1.DesignModule23.singletonM;
 
 /**
  * 单例模式

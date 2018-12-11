@@ -1,4 +1,4 @@
-package com.qing.springboot1.proxyTest;
+package com.qing.springboot1.DesignModule23.proxyM;
 
 public class Test {
 

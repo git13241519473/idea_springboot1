@@ -1,4 +1,4 @@
-package com.qing.springboot1.singletonTest;
+package com.qing.springboot1.DesignModule23.singletonM;
 
 /**
  * 单例模式
@@ -12,11 +12,11 @@ public class Singleton3 {
     }
 
     //通过静态内部类获取单例对象
-    private static class staticSingletonClass{
+    private static class StaticSingletonClass{
         private static final Singleton3 INSTANCE = new Singleton3();
     }
 
     public static Singleton3 getInstance(){
-        return staticSingletonClass.INSTANCE;
+        return StaticSingletonClass.INSTANCE;
     }
 }

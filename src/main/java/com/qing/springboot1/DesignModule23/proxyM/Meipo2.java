@@ -1,4 +1,4 @@
-package com.qing.springboot1.proxyTest;
+package com.qing.springboot1.DesignModule23.proxyM;
 
 import org.springframework.cglib.proxy.Enhancer;
 import org.springframework.cglib.proxy.MethodInterceptor;

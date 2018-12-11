@@ -1,4 +1,4 @@
-package com.qing.springboot1.proxyTest;
+package com.qing.springboot1.DesignModule23.proxyM;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
