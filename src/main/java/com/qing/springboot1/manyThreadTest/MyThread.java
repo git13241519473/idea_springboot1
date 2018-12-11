@@ -7,4 +7,6 @@ public class MyThread extends Thread{
         System.out.println("启动一个线程：" + Thread.currentThread().getName());
     }
 
+    ThreadLocal<String> threadLocal = new ThreadLocal<>();
+
 }
