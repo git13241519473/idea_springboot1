@@ -46,6 +46,7 @@ public class UseCyclicBarrier {
                     Thread.sleep(new Random().nextInt(5000));
                     System.out.println("收集到到第" + index + "个龙珠");
                     cyclicBarrier2.await();
+                    System.out.println("上交国家第" + index + "个龙珠");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
