@@ -92,6 +92,13 @@
             <version>3.8.1</version>
         </dependency>
 
+        <!-- 二维码需要的zxing https://mvnrepository.com/artifact/com.google.zxing/core -->
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>core</artifactId>
+            <version>3.3.3</version>
+        </dependency>
+
     </dependencies>
 
     <build>

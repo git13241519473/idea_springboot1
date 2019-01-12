@@ -1,4 +1,4 @@
-package com.qing.springboot1.utils;
+package com.qing.springboot1.utils.pinyin4j;
 
 import net.sourceforge.pinyin4j.PinyinHelper;
 import net.sourceforge.pinyin4j.format.HanyuPinyinCaseType;
