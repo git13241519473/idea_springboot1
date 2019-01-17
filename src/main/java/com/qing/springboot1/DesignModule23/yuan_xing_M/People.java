@@ -1,4 +1,4 @@
-package com.qing.springboot1.DesignModule23.prototypeM;
+package com.qing.springboot1.DesignModule23.yuan_xing_M;
 
 import java.io.*;
 

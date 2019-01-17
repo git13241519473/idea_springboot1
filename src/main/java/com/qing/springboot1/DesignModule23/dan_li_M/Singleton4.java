@@ -1,4 +1,4 @@
-package com.qing.springboot1.DesignModule23.singletonM;
+package com.qing.springboot1.DesignModule23.dan_li_M;
 
 /**
  * 单例模式

@@ -1,6 +1,6 @@
 package com.qing.springboot1.DesignModule23.jian_zao_zhe_M;
 
-public class AstudengImpl implements IStudent {
+public class AstudentImpl implements IStudent {
     Student student = new Student();
 
     @Override

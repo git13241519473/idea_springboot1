@@ -1,19 +1,21 @@
-package com.qing.springboot1.DesignModule23.prototypeM;
+package com.qing.springboot1.DesignModule23.dai_li_M;
 
-import org.springframework.beans.BeanUtils;
+public class DaQing implements Person {
 
-public class User {
     private String name;
     private String sex;
     private int age;
 
-    //第一种克隆方法，通过 BeanUtils.copyProperties();
-    public User clone(){
-        User user = new User();
-        BeanUtils.copyProperties(this, user);
-        return user;
+    public DaQing() {   //无参构造器
     }
 
+    public DaQing(String name, String sex, int age) {   //有参构造器
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+    }
+
+    // 生成 getter、setter 方法
     public String getName() {
         return name;
     }
@@ -38,21 +40,18 @@ public class User {
         this.age = age;
     }
 
-    public User() {
-    }
-
-    public User(String name, String sex, int age) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-    }
-
     @Override
     public String toString() {
-        return "User{" +
+        return "DaQing{" +
                 "name='" + name + '\'' +
                 ", sex='" + sex + '\'' +
                 ", age=" + age +
                 '}';
+    }
+
+    @Override
+    public void findLove() {
+        System.out.println("喜欢类型：肤白貌美大长腿");
+        System.out.println("做梦都会笑死啦，哈哈哈");
     }
 }

@@ -1,4 +1,4 @@
-package com.qing.springboot1.DesignModule23.proxyM;
+package com.qing.springboot1.DesignModule23.dai_li_M;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
