@@ -12,7 +12,7 @@ public class ClientSocket {
             Socket socket = new Socket("127.0.0.1",4700);   //向本机的4700端口发出客户请求
 
             //由Socket对象得到输入流，并构造相应的BufferedReader对象
-            //由Socket对象得到输出流，并构造PrintWriter对象
+            //由Socket对 象得到输出流，并构造PrintWriter对象
             BufferedReader is = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             PrintWriter os = new PrintWriter(socket.getOutputStream());
 
