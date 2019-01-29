@@ -34,8 +34,5 @@ public class Demo01 {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
-
 }
