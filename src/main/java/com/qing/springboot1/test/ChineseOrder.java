@@ -3,6 +3,8 @@ package com.qing.springboot1.test;
 import java.text.Collator;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ChineseOrder {
 
@@ -15,6 +17,10 @@ public class ChineseOrder {
             System.out.println(names[i]);
         }
 
+        System.out.println("======================================================");
+
+        System.out.println(regexUserAccount("lzq02@zt.com哈哈"));
+
     }
 
     public static String[] getSortOfChinese(String[] a) {
@@ -26,4 +32,10 @@ public class ChineseOrder {
         return a;
     }
 
+    public static boolean regexUserAccount(String userAccount){
+        String regex = "[\u4E00-\u9FA5]";
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(userAccount);
+        return m.find();
+    }
 }
