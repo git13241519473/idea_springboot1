@@ -1,5 +1,8 @@
 package com.qing.springboot1.dao;
 
+import io.swagger.annotations.ApiModel;
+
+@ApiModel(value="User", description = "user实体类")
 public class User {
     private int id;
     private String username;
