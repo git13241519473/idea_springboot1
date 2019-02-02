@@ -6,7 +6,43 @@ import io.swagger.annotations.ApiModel;
 public class User {
     private int id;
     private String username;
+    private String password;
+    private int sex;
     private int age;
+    private String address;
+    private String telphone;
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public int getSex() {
+        return sex;
+    }
+
+    public void setSex(int sex) {
+        this.sex = sex;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getTelphone() {
+        return telphone;
+    }
+
+    public void setTelphone(String telphone) {
+        this.telphone = telphone;
+    }
 
     public int getId() {
         return id;
