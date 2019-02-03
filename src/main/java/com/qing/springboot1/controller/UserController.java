@@ -48,4 +48,17 @@ public class UserController {
         Page<User> page = userService.findByPage(pageNum, pageSize);
         return page;
     }
+
+    @RequestMapping("findByUsername")
+    @ResponseBody
+    public List<User> findByUsername(String username){
+        return userService.findByUsername(username);
+    }
+
+    @RequestMapping("findByAge")
+    @ResponseBody
+    public List<User> findByAge(Integer age){
+        return userService.findByAge(age);
+    }
+
 }

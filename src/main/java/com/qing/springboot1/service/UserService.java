@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -74,5 +75,28 @@ public class UserService {
      */
     public Page<User> findByPage(Integer pageNum, Integer pageSize) {
         return userRepository.findAll(PageRequest.of(pageNum-1, pageSize, Sort.by(Sort.Order.asc("id"))));
+    }
+
+    /**
+     * @description 根据username 查询user集合
+     * @author lzq
+     * @date 2019/2/3 23:07
+     * @param username
+     * @return List<User>
+     */
+    public List<User> findByUsername(String username){
+        return userRepository.findByUsernameLike(username);
+    }
+
+    /**
+     * @description 根据username 查询user集合
+     * @author lzq
+     * @date 2019/2/3 23:07
+     * @param age
+     * @return List<User>
+     */
+    public List<User> findByAge(Integer age){
+        //return userRepository.findByAgeGreaterThan(age, Sort.by(Sort.Order.asc("age")));
+        return userRepository.findByAgeBetween(20, 30, Sort.by(Sort.Order.asc("age")));
     }
 }
