@@ -7,7 +7,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
-public interface UserRepository extends JpaRepository<User, Integer>, CrudRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Integer> {
     // 根据username查找
     List<User> findByUsername(String username);
     List<User> findByUsernameContaining(String username);
