@@ -5,7 +5,7 @@ import com.qing.springboot1.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -26,7 +26,7 @@ public class UserService {
     }
 
     /**
-     * @description 方法说明
+     * @description 添加对象
      * @author lzq
      * @date 2019/2/2 22:50
      * @param
@@ -34,5 +34,31 @@ public class UserService {
      */
     public void addUser(User user) {
         userRepository.save(user);
+    }
+
+    /**
+     * @description 根据主键查询实例
+     * @author lzq
+     * @date 2019/2/3 14:55
+     * @param id 主键
+     * @return User 实例
+     */
+    public User findById(Integer id) {
+        Optional<User> user = userRepository.findById(id);
+        if(user.isPresent()){
+            return user.get();
+        }
+        return null;
+    }
+
+    /**
+     * @description 根据主键删除实例
+     * @author lzq
+     * @date 2019/2/3 15:02
+     * @param id
+     * @return
+     */
+    public void deleteById(Integer id) {
+        userRepository.deleteById(id);
     }
 }

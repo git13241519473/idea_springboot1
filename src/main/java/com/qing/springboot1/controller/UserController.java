@@ -28,4 +28,16 @@ public class UserController {
         user.setPassword(password);
         userService.addUser(user);
     }
+
+    @RequestMapping("findById")
+    @ResponseBody
+    public User findById(Integer id){
+        return userService.findById(id);
+    }
+
+    @RequestMapping("deleteById")
+    public void deleteById(Integer id){
+        userService.deleteById(id);
+    }
+
 }

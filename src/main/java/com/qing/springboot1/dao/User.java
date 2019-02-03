@@ -20,6 +20,15 @@ public class User {
     private int age;
     private String address;
     private String telphone;
+    private int deleted;
+
+    public int getDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted(int deleted) {
+        this.deleted = deleted;
+    }
 
     public String getPassword() {
         return password;
