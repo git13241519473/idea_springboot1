@@ -3,6 +3,9 @@ package com.qing.springboot1.service;
 import com.qing.springboot1.dao.User;
 import com.qing.springboot1.dao.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -22,7 +25,7 @@ public class UserService {
      * @return Iterable<User>
      */
     public Iterable<User> findAllUsers() {
-        return userRepository.findAll();
+        return userRepository.findAll(Sort.by(Sort.Order.asc("id")));
     }
 
     /**
@@ -60,5 +63,16 @@ public class UserService {
      */
     public void deleteById(Integer id) {
         userRepository.deleteById(id);
+    }
+
+    /**
+     * @description 分页查询
+     * @author lzq
+     * @date 2019/2/3 15:33
+     * @param pageNum，pageSize
+     * @return
+     */
+    public Page<User> findByPage(Integer pageNum, Integer pageSize) {
+        return userRepository.findAll(PageRequest.of(pageNum-1, pageSize, Sort.by(Sort.Order.asc("id"))));
     }
 }
