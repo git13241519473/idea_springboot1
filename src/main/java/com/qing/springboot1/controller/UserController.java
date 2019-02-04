@@ -69,4 +69,12 @@ public class UserController {
     public List<User> findByAgeRange(Integer less, Integer greater){
         return userService.findByAgeRange(less, greater);
     }
+
+    @RequestMapping("updateAgeByUsername")
+    @ResponseBody
+    public int updateAgeByUsername(String username, Integer age){
+        int result = userService.updateAgeByUsername(username, age);
+        return result;
+    }
+
 }

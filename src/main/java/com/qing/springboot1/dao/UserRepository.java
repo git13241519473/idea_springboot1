@@ -3,7 +3,9 @@ package com.qing.springboot1.dao;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -20,6 +22,8 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     List<User> findByAgeGreaterThan(Integer age, Sort sort);
     List<User> findByAgeLessThanEqual(Integer age);
     List<User> findByAgeBetween(Integer less, Integer greater, Sort sort);
+
+    //===============================================================================================================
 
     /*
     Java持久化查询语言(JPQL)是一种可移植的查询语言，旨在以面向对象表达式语言的表达式，
@@ -43,8 +47,16 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     @Query(nativeQuery = true, value = "select * from user u where u.age >= ?1 and u.age <= ?2 order by u.age asc")
     List<User> findByAgeRangeSqlSort(Integer less, Integer greater);
 
+    //===============================================================================================================
+    //使用@param 注解指定方法参数的具体名称
+
     @Query(nativeQuery = true, value = "select * from user u where u.age >= ?1 and u.age <= ?2 order by u.age asc limit ?3, ?4")
     List<User> findByAgeRangeSqlSortPage(Integer less, Integer greater, Integer pageNum, Integer pageSize);
 
+    @Query(value = "select u from User u where u.address = :address and u.email = :email")
+    User findByAddressAndEmail(@Param("address") String address, @Param("email") String email);
 
+    @Modifying
+    @Query("update User u set u.age = ?2 where u.username = ?1")
+    int updateAgeByUsername(String username, Integer age);
 }

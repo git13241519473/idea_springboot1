@@ -20,7 +20,17 @@ public class User {
     private int age;
     private String address;
     private String telphone;
+    private String email;
     private int deleted;
+
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public int getDeleted() {
         return deleted;

@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -114,5 +115,17 @@ public class UserService {
         //return userRepository.findByAgeRangeSql(less, greater);
         //return userRepository.findByAgeRangeSqlSort(less, greater);
         return userRepository.findByAgeRangeSqlSortPage(less, greater, 1, 2);
+    }
+
+    /**
+     * @description 修改年龄
+     * @author lzq
+     * @date 2019/2/4 16:26
+     * @param username, age
+     * @return
+     */
+    @Transactional
+    public int updateAgeByUsername(String username, Integer age) {
+        return userRepository.updateAgeByUsername(username, age);
     }
 }
