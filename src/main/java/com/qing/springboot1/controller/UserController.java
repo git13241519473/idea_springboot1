@@ -17,6 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    //基础用法
     @RequestMapping("findAllUsers")
     @ResponseBody
     public Iterable<User> findAllUsers(){
@@ -49,6 +50,7 @@ public class UserController {
         return page;
     }
 
+    //自定义查询方法
     @RequestMapping("findByUsername")
     @ResponseBody
     public List<User> findByUsername(String username){
@@ -61,4 +63,10 @@ public class UserController {
         return userService.findByAge(age);
     }
 
+    //使用注解查询方法
+    @RequestMapping("findByAgeRange")
+    @ResponseBody
+    public List<User> findByAgeRange(Integer less, Integer greater){
+        return userService.findByAgeRange(less, greater);
+    }
 }

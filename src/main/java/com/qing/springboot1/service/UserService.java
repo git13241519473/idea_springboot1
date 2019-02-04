@@ -99,4 +99,20 @@ public class UserService {
         //return userRepository.findByAgeGreaterThan(age, Sort.by(Sort.Order.asc("age")));
         return userRepository.findByAgeBetween(20, 30, Sort.by(Sort.Order.asc("age")));
     }
+
+    /**
+     * @description 通过年龄范围查询用户集合
+     * @author lzq
+     * @date 2019/2/4 11:45
+     * @param  less,  greater
+     * @return List<User>
+     */
+    public List<User> findByAgeRange(Integer less, Integer greater) {
+        //return userRepository.findByAgeRange(less, greater);
+        //return userRepository.findByAgeRangeSort(less, greater, Sort.by(Sort.Order.asc("age")));
+        //return userRepository.findByAgeRangeSortPage(less, greater, PageRequest.of(0, 2, Sort.by(Sort.Order.asc("age"))));
+        //return userRepository.findByAgeRangeSql(less, greater);
+        //return userRepository.findByAgeRangeSqlSort(less, greater);
+        return userRepository.findByAgeRangeSqlSortPage(less, greater, 1, 2);
+    }
 }
