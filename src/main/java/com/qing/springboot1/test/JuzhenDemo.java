@@ -14,12 +14,16 @@ public class JuzhenDemo {
                 }
                 System.out.println();
             }
-        }else{
-            System.out.println("无法进行矩阵乘法运算");
         }
     }
 
-
+    /**
+     * @description 矩阵乘法运算
+     * @author lzq
+     * @date 2019/2/13 18:23
+     * @param  aArray, bArray
+     * @return int[][]
+     */
     public static int[][] abArrayCheng(int[][] aArray, int[][] bArray){
         //判断是否可以进行乘法运算
         if(aArray != null && bArray != null){
@@ -36,6 +40,39 @@ public class JuzhenDemo {
                     }
                 }
                 return cArray;
+            }else{
+                System.out.println("无法进行矩阵乘法运算");
+            }
+        }
+        return null;
+    }
+
+    /**
+     * @description 矩阵加减法运算
+     * @author lzq
+     * @date 2019/2/13 18:23
+     * @param  aArray, bArray, typeOf: 1 +,  2 -
+     * @return int[][]
+     */
+    public static int[][] abArrayjiajian(int[][] aArray, int[][] bArray, int typeOf){
+        //判断是否可以进行乘法运算
+        if(aArray != null && bArray != null){
+            int an = aArray.length, am = aArray[0].length;
+            int bn = bArray.length, bm = bArray[0].length;
+            if(an == bn && am == bm){
+                int[][] cArray = new int[an][am];
+                for(int i = 0; i < an; i++){
+                    for(int j = 0; j < am; j++){
+                        if(typeOf != 2){
+                            cArray[i][j] = aArray[i][j] + bArray[i][j];
+                        }else{
+                            cArray[i][j] = aArray[i][j] - bArray[i][j];
+                        }
+                    }
+                }
+                return cArray;
+            }else{
+                System.out.println("无法进行矩阵加减运算");
             }
         }
         return null;
