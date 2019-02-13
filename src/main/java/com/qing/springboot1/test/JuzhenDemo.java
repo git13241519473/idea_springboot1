@@ -6,7 +6,9 @@ public class JuzhenDemo {
         int[][] aArray = new int[][]{{1, 0, 3, -1}, {2, 1, 0, 2}};
         int[][] bArray = new int[][]{{4, 1, 0}, {-1, 1, 3}, {2, 0, 1}, {1, 3, 4}};
         int[][] cArray = new int[][]{{1, 0, 0, 0}, {0, 1, 0, 0}, {0, 0, 1, 0}, {0, 0, 0, 1}};
-        int[][] result = abArrayCheng(aArray, cArray);
+        int[][] dArray = new int[][]{{1, 0, 3, -1}, {2, 1, 0, 2}};
+        int[][] result = abArrayjiajian(aArray, dArray, 2);
+        int[][] result2 = abArrayCheng(aArray, bArray);
         if(result != null){
             for(int i = 0; i < result.length; i++){
                 for(int j = 0; j < result[0].length; j++){
