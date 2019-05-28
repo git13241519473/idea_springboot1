@@ -2,10 +2,14 @@ package com.qing.springboot1.manyThreadTest.cyclicBarrier;
 
 import java.util.Random;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class UseCyclicBarrier {
 
     private static volatile int threadCount = 7;
+
+    private static ExecutorService executors = Executors.newCachedThreadPool();
 
     public static void main(String[] args) {
         //第一个屏障点，召集7个法师，一同去寻找龙珠
@@ -13,12 +17,12 @@ public class UseCyclicBarrier {
             @Override
             public void run() {
                 System.out.println("召集齐了法师，开始寻找龙珠");
-                findLongZhu();
+                //findLongZhu();
             }
         });
         for(int i = 1; i <= threadCount; i++){
             int index = i;
-            new Thread(() -> {
+            executors.execute( new Thread(() -> {
                 try {
                     Thread.sleep(new Random().nextInt(5000));
                     System.out.println("召唤到第" + index + "个法师");
@@ -26,7 +30,7 @@ public class UseCyclicBarrier {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }).start();
+            }));
         }
     }
 
