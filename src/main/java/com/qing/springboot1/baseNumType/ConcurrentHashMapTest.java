@@ -1,10 +1,8 @@
 package com.qing.springboot1.baseNumType;
 
-import com.alibaba.fastjson.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class ConcurrentHashMapTest {
     public static void main(String[] args) {
