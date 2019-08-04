@@ -38,21 +38,17 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+        <!-- spring-boot-starter-data-jpa -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
             <version>2.0.5.RELEASE</version>
         </dependency>
-
-
-        <!-- mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.13</version>
         </dependency>
-
 
         <!-- thymeleaf模板引擎 -->
         <dependency>
@@ -81,11 +77,7 @@
             <version>3.3.1</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.47</version>
-        </dependency>
+
 
         <!-- 汉语转为拼音 https://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
         <dependency>
@@ -94,14 +86,9 @@
             <version>2.5.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.8.1</version>
-        </dependency>
 
-        <!-- 二维码需要的zxing https://mvnrepository.com/artifact/com.google.zxing/core -->
+
+        <!-- 二维码需要的zxing  -->
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
@@ -134,6 +121,13 @@
             <version>2.6.1</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-io -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -147,8 +141,29 @@
             <artifactId>json-lib</artifactId>
             <version>2.4</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
 
-
+        <!-- quartz定时调度依赖 -->
+        <!-- <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz-jobs</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.3.11.RELEASE</version>
+        </dependency>
+        -->
     </dependencies>
 
     <build>
